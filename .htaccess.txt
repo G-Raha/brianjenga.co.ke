@@ -1,0 +1,5 @@
+# Icons & web app manifest
+AddType image/svg+xml           .svg
+AddType image/x-icon            .ico
+AddType application/manifest+json .webmanifest
+AddType image/png               .png

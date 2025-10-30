@@ -1,0 +1,33 @@
+# robots.txt for https://www.briannjenga.co.ke/
+# Author: Brian Njenga | JBN Content Consultancy
+# Purpose: Manage crawler access & reference sitemap for Google, Bing, and other bots
+
+User-agent: *
+Allow: /
+
+# --- Disallow utility or transactional pages
+Disallow: /thank-you.html
+Disallow: /dl-thank-you.html
+Disallow: /nl-thank-you.html
+Disallow: /email-list-download-handler.php
+Disallow: /newsletter-handler.php
+Disallow: /contact-handler.php
+Disallow: /phpmailer/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+
+# --- Specific directives for major crawlers 
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+# --- Optional crawl rate throttling (uncomment only if bandwidth becomes an issue)
+# Crawl-delay: 10
+
+# --- Sitemap location (universal)
+Sitemap: https://www.briannjenga.co.ke/sitemap.xml
