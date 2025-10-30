@@ -1,0 +1,39 @@
+.center {
+  text-align: center;   /* centers inline content like text, buttons */
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;   /* centers block-level items (like <button>, <img>) */
+}
+
+.carousel-caption {
+  position: relative;
+  z-index: 10; /* makes sure caption and buttons are on top */
+}
+
+.carousel-caption a,
+.carousel-caption button {
+  position: relative;
+  z-index: 20; /* buttons above everything */
+  pointer-events: auto; /* ensure they can be clicked */
+}
+
+/* Default kill underline (buttons, nav, header/footer) */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Scoped override: article body links */
+.prose a {
+  color: #93c5fd;                  /* nice accessible blue */
+  text-decoration: underline;      /* only these get underlined */
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+.prose a:hover {
+  color: #bfdbfe;                  /* lighter on hover */
+}

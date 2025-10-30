@@ -1,0 +1,204 @@
+/* ====== MOBILE OPTIMIZATION PATCH ====== */
+html, body { overflow-x: hidden; }
+
+/* Always-safe defaults */
+img, video { max-width: 100%; height: auto; }
+button, .btn { touch-action: manipulation; }
+
+
+/* ========= MOBILE NAV: 3×2 GRID, NO HORIZONTAL SCROLL ========= */
+@media (max-width: 700px){
+  /* Stack brand above nav so links can breathe */
+  .nav{
+    display: flex;             /* keep flex but stack */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 0;
+  }
+
+  /* Force the UL to be a 3-column grid (wins over the global flex rule) */
+  header nav ul{
+    display: grid !important;                          /* override earlier flex */
+    grid-template-columns: repeat(3, minmax(0,1fr));   /* 3 columns */
+    gap: 10px 12px;                                    /* row/col spacing */
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  /* Clean up list/link spacing */
+  header nav li{ margin: 0 !important; }
+  header nav a{ display:inline-block; }
+
+  /* Buttons: comfy but compact on mobile */
+  header nav a.btn{
+    padding: 10px 14px;
+    white-space: nowrap;
+  }
+
+  /* Hard stop any sideways scroll */
+  html, body{ overflow-x: hidden; }
+}
+
+@media (max-width: 520px) {
+    nav.ul{
+        display:grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+    }
+    nav ul li :last-child {
+        grid-column: 1 / -1;
+        justify-self: stretch;
+    }
+    header .btn.btn-primary{
+        width:100%;
+        font-size: 15px;
+        padding: 12px 14px;
+        border-radius: 14px;
+
+    }
+header .btn.btn-ghost { padding: 10px 12px;}
+header .av{ padding: 10px 0;}
+    }
+    
+/* General mobile polish (optional but helpful) */
+@media (max-width: 700px){
+  .container { width: min(1120px, 94%); }
+  .btn { padding: 10px 14px; }
+}
+
+/* Container breathing room */
+@media (max-width: 900px){
+  .container { width: min(1120px, 94%); }
+}
+
+
+
+
+/* Global section padding tighter on phones */
+@media (max-width: 900px){
+  section { padding: 44px 0; }
+}
+@media (max-width: 560px){
+  section { padding: 36px 0; }
+}
+
+/* Cards & grids collapse */
+@media (max-width: 960px){
+  .grid.cols-3 { grid-template-columns: 1fr; }
+  .grid.cols-2 { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px){
+  .card { padding: 18px; }
+}
+
+/* Journey block: stack portrait under text on phones */
+@media (max-width: 900px){
+  .journey-flex { flex-direction: column; gap: 16px; }
+  .journey-portrait { align-self: flex-start; }
+  .journey-portrait img { max-width: 220px; }
+}
+
+/* Buttons: comfortable taps & wrapping */
+@media (max-width: 680px){
+  .btn { padding: 10px 14px; }
+  .center .btn { margin: 6px 4px 0; }
+}
+
+/* Forms: inputs full-width on mobile */
+@media (max-width: 900px){
+  form .grid.cols-3,
+  form .grid.cols-2 { grid-template-columns: 1fr; }
+  input[type="email"],
+  input[type="text"],
+  textarea {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Footer: tighter padding */
+@media (max-width: 560px){
+  footer { padding: 28px 0 54px; }
+}
+
+/* ===== Header baseline (desktop unchanged) ===== */
+.site-header{ position:sticky; top:0; z-index:100; background:#0b1220; }
+.site-header .inner{
+  max-width:1200px; margin:0 auto; padding:10px 16px;
+  display:flex; align-items:center; gap:16px;
+}
+.brand{ display:flex; align-items:center; gap:10px; color:#fff; text-decoration:none; }
+.brand img{ height:28px; width:auto; display:block; }
+.site-nav{ margin-left:auto; }
+
+/* Desktop/tablet nav keeps your current look */
+@media (min-width:721px){
+  .nav-list{ display:flex; align-items:center; gap:12px; list-style:none; margin:0; padding:0; }
+  .nav-item{ flex:0 0 auto; }
+  .nav-link{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:10px 14px; border-radius:999px; color:#e2e8f0; text-decoration:none;
+    border:1px solid transparent; font-weight:600;
+  }
+  .nav-outline, .btn-btn-ghost{ border-color:rgba(255,255,255,.18); color:#dbe2ee; }
+  .nav-link:hover{ background:rgba(255,255,255,.06); color:#fff; }
+  .nav-cta, .btn-btn-primary{
+    background:linear-gradient(180deg, rgba(99,134,255,.9), rgba(60,99,231,.9));
+    color:#fff; font-weight:800;
+  }
+}
+
+/* ===== Mobile layout (≤720px): 3 per row, centered last row ===== */
+@media (max-width:720px){
+  .site-header .inner{ padding:10px 12px; }
+
+
+  .nav-list{
+    list-style:none; margin:8px 0 0; padding:0;
+    display:flex; flex-wrap:wrap;
+    gap:10px; justify-content:center;        /* centers the last row automatically */
+  }
+
+  /* Each item occupies 1/3 of the row (minus gaps) */
+  .nav-item{ flex:0 0 calc(33.333% - 10px); display:flex; }
+
+  .nav-link{
+    flex:1 1 auto; width:100%;
+    display:flex; align-items:center; justify-content:center;
+    height:40px;                            /* consistent button height */
+    padding:0 10px;                         /* compact */
+    border-radius:999px; text-decoration:none;
+    color:#e2e8f0; font-size:14px; font-weight:700;
+    background:transparent; border:1px solid transparent;
+  }
+
+  /* Subtle outline button (e.g., Contact) */
+  .nav-outline, .btn-btn-ghost{
+    border-color:rgba(255,255,255,.18);
+    color:#dbe2ee;
+  }
+
+  /* CTA: same cell width, visually compact so it doesn't dominate */
+  .nav-cta, .btn-btn-primary{
+    background:linear-gradient(180deg, rgba(99,134,255,.95), rgba(60,99,231,.95));
+    color:#fff; border:none;
+    font-size:13.5px; font-weight:800; letter-spacing:.01em;
+    height:38px;                             /* slightly shorter than links */
+    padding:0 8px;
+  }
+
+  /* Active link state (optional) */
+  .nav-link.active{
+    background:rgba(255,255,255,.08); color:#fff; border-color:rgba(255,255,255,.22);
+  }
+
+
+
+}
