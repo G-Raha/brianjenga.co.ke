@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Free Toolkits — Brian Njenga </title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/css/site.css">
+
+<link rel="icon" href="/favicon.svg?v=5" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png?v=5" sizes="32x32" type="image/png">
+<link rel="shortcut icon" href="/favicon.ico?v=5">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<!--<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0ea5e9"> add later -->
+
+<link rel="canonical" href="https://briannjenga.co.ke/toolkits/index.html" />
+
+<style>
+  :root{--blue:#2563eb;--green:#16a34a;--red:#dc2626;--slate:#0f172a;--muted:#94a3b8;--bg:#0b1020;--ring:rgba(37,99,235,.35);--radius:18px}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:#e5e7eb;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  a{color:inherit;text-decoration:none}
+  .container{width:min(1120px,92%);margin-inline:auto}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:12px 18px;border-radius:999px;font-weight:700;border:1px solid transparent;transition:.2s transform}
+  .btn:hover{transform:translateY(-1px)} .btn:focus{outline:none;box-shadow:0 0 0 6px var(--ring)}
+  .btn-primary{background:linear-gradient(90deg,var(--blue),#1e40af);color:#fff}
+  .btn-secondary{background:linear-gradient(90deg,var(--green),#15803d);color:#041007}
+  .btn-ghost{border:1px solid rgba(255,255,255,.25)}
+  header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.7);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .brand{display:flex;gap:10px;align-items:center}
+  .logo{width:34px;height:34px;border-radius:10px;background:conic-gradient(from 180deg at 50% 50%, var(--green), var(--blue), var(--red))}
+  .brand h1{font-size:18px;font-weight:800}
+  nav ul{display:flex;gap:22px;align-items:center}
+  nav a{color:#cbd5e1;font-weight:600}
+  nav a:hover{color:#fff}
+  .center{text-align:center}
+  .muted{color:var(--muted)}
+  /* Logo image styling */
+.logo-img {
+  height: 60px;   /* tweak this up/down until it feels balanced */
+  width: auto;    /* keeps proportions */
+  display: block;
+}
+
+/* Ensure brand items align nicely */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* space between logo and text */
+}
+
+  /* Hero */
+  .hero{padding:42px 0 10px;border-bottom:1px solid rgba(255,255,255,.06)}
+  .hero h1{font-size:clamp(26px,5vw,40px);margin:0}
+  .hero p{color:#cbd5e1}
+
+  /* Cards Grid */
+  section{padding:44px 0}
+  .grid{display:grid;gap:22px}
+  .cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media (max-width:1024px){.cols-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:680px){.cols-3{grid-template-columns:1fr}}
+  .card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column}
+  .thumb{aspect-ratio:16/9;background:#0b1225;border-radius:12px;overflow:hidden;display:block}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .card h3{margin:12px 0 4px;font-size:clamp(18px,3.2vw,22px)}
+  .card p{color:#dbe3ee;margin:0 0 10px}
+  .card .cta{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+
+  /* Mobile nav: 3×2 grid at <=700px for 6 links */
+  @media (max-width:700px){
+    .nav{flex-direction:column;gap:8px;padding:10px 0}
+    header nav ul{display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 12px;align-items:center;justify-items:center;width:100%;padding:0;margin:0;list-style:none}
+    header nav li{margin:0 !important}
+    header nav a.btn{padding:10px 14px;white-space:nowrap}
+    html,body{overflow-x:hidden}
+  }
+</style>
+</head>
+<body>
+ <header class="site-header">
+    <div class="nav container">
+      <div class="brand">
+       <img src="/images/jbn_logo.avif" 
+           alt="JBN Content Consultancy logo" 
+           class="logo-img">
+          <div class="brand-title">JBN Content Consultancy</div>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
+          <li><a class="btn btn-ghost nav-outline" href="/about.html#contact">Contact</a></li>
+          <li><a class="btn btn-primary nav-cta" href="/sustainability.html">Sustainability</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>Free Toolkits</h1>
+      <p>Actionable checklists, playbooks, and worksheets to help you grow with clarity. Unlock any toolkit with your name and email—instant access, no fluff.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container grid cols-3">
+
+      <!-- Toolkit 1: SERP Real Estate -->
+      <article class="card">
+        <a class="thumb" href="/toolkits/serp-real-estate-toolkit.html" aria-label="Open SERP Real Estate Toolkit">
+       
+          <img src="/images/toolkits/serp-real-esate-toolkit.avif" alt="SERP Real Estate Toolkit cover"></a>
+    
+        <h3><a href="/toolkits/serp-real-estate-toolkit.html">🎯 SERP Real Estate Toolkit</a></h3>
+        <p>Win more “screen space” on Google: Featured Snippets, PAA, Local Pack, Video/Image carousels, Sitelinks, and AI Overviews—what they are and how to earn them ethically.</p>
+        <p class="center" style="margin-top:10px">
+          <a class="btn btn-secondary" href="/toolkits/serp-real-estate-toolkit.html">Get the toolkit</a>
+</p>
+
+      </article>
+
+      <!-- Toolkit 2: Content Value Quadrant -->
+      <article class="card">
+        <a class="thumb" href="/toolkits/how-to-build-a-content-value-quadrant-toolkit.html"><img src="/images/toolkits/content-value-quadrant.avif" alt="Content Value Quadrant cover"></a>
+        <h3><a href="/toolkits/how-to-build-a-content-value-quadrant.html">📊 Content Value Quadrant Toolkit</a></h3>
+        <p>A 2×2 matrix that helps you evaluate content by both Reach (traffic, shares, impressions) and Depth (saves, replies, conversions). Spot “Quiet Gold,” double-down on “Compounding Assets,” and retire shallow fades. A simple framework to make smarter editorial and SEO bets.</p>
+          <p class="center" style="margin-top:10px">
+          <a class="btn btn-secondary" href="/toolkits/how-to-build-a-content-value-quadrant-toolkit.html">Get the checklist</a>
+      </p>
+      </article>
+
+      <!-- Toolkit 3: Omnichannel Starter Stack for Small Brands -->
+      <article class="card">
+        <a class="thumb" href="/toolkits/omnichannel-starter-stack.html"><img src="/images/toolkits/omnichannel-starter-stack.avif" alt="Omnichannel Starter Stack cover"></a>
+        <h3><a href="/toolkits/omnichannel-starter-stack.html">📦 Omnichannel Starter Stack</a></h3>
+        <p>From solopreneurs to scale-ups, this toolkit shows how to connect email, e-commerce, support, and analytics into a seamless flow. With tool pairings, workflows, and a 3-month roadmap, you’ll turn platform chaos into customer clarity.</p>
+         <p class="center" style="margin-top:10px">
+          <a class="btn btn-secondary" href="/toolkits/omnichannel-starter-stack.html">Get the toolkit</a>
+        </p> 
+      </article>
+
+      <!-- Toolkit 4: 10 Ways to Make Your Content More Bingeable -->
+      <article class="card">
+        <a class="thumb" href="/toolkits/10-ways-to-make-your-content-more-bingeable.html"><img src="/images/toolkits/making-your-content-more-bingeable.avif" alt="Making Content More Bingeable Toolkit cover"></a>
+        <h3><a href="/toolkits/10-ways-to-make-your-content-more-bingeable.html">📺 10 Ways to Make Your Content More Bingeable</a></h3>
+        <p>A practical checklist to turn casual scrollers into loyal binge-watchers of your brand. Learn how to hook, loop, repurpose, and reward—so every post builds momentum for the next.</p>
+         <p class="center" style="margin-top:10px">
+          <a class="btn btn-secondary" href="/toolkits/10-ways-to-make-your-content-more-bingeable.html">Get the toolkit</a>
+        </p>
+      </article>
+
+      <!-- Toolkit 5: Net Positive Business Scorecard -->
+      <article class="card">
+        <a class="thumb" href="/toolkits/net-positive-business-scorecard.html"><img src="/images/toolkits/net-positive-business-scorecard.avif" alt="Net Positive Business Scorecard cover"></a>
+        <h3><a href="/toolkits/net-positive-business-scorecard.html">🌱 Net Positive Business Scorecard</a></h3>
+        <p>A practical framework to measure what your company gives back, not just what it takes. Score across 5 dimensions—regenerative impact, community well-being, equitable governance, knowledge-building, and multi-metric success—and identify clear steps toward a fully Net Positive business.</p>
+       <p class="center" style="margin-top:10px">
+          <a class="btn btn-secondary" href="/toolkits/net-positive-business-scorecard.html">Get the kit</a>
+        </p>
+      </article>
+
+      
+      <!-- Toolkit 6: 5 Apps That Prioritize Digtal Well-being -->
+      <article class="card">
+        <a class="thumb" href="/toolkits/5-apps-that-prioritize-digital-wellbeing.html"><img src="/images/toolkits/5-apps-that-prioritize-digital-wellbeing.avif" alt="5 Apps That Prioritize Digital Well-being cover"></a>
+        <h3><a href="/toolkits/5-apps-that-prioritize-digital-wellbeing.html">📱 5 Apps That Prioritize Digital Well-Being</a></h3>
+        <p>A curated mini-guide to help you block distractions, reclaim focus, and build mindful habits. From Freedom and Brain.fm to Daylio and Obsidian, these tools help you design a healthier digital ecosystem.</p>
+         <p class="center" style="margin-top:10px">
+          <a class="btn btn-secondary" href="/toolkits/5-apps-that-prioritize-digital-wellbeing.html">Get the toolkit</a>
+        </p>
+      </article>
+
+            <!-- Toolkit 7: 🌍 Beyond Carbon - Multi-Metric ESG for the Real World Guide -->
+      <article class="card">
+        <a class="thumb" href="/toolkits/multi-metric-esg.html"><img src="/images/toolkits/multi-metric-esg.avif" alt="Multi-Metric ESG Strategy cover"></a>
+        <h3><a href="/toolkits/multi-metric-esg.html">🌍 Beyond Carbon - Multi-Metric ESG for the Real World Guide</a></h3>
+        <p>Most “sustainability” dashboards stop at CO₂. This guide helps you avoid carbon tunnel vision with a practical, people-and-planet framework that tracks biodiversity, soil vitality, water integrity, human well-being, cultural resilience, and governance equity—complete with a sample KPI dashboard and implementation steps. Measure what matters. All of it.</p>  
+        
+        <p class="center" style="margin-top:10px">
+          <a class="btn btn-secondary" href="/toolkits/multi-metric-esg.html">Get the toolkit</a>
+        </p>
+      </article>
+
+       <!-- Toolkit 8: 🌟 Mini Case Study Pack: Brands Using Paid Visibility Ethically -->
+      <article class="card">
+        <a class="thumb" href="/toolkits/5-case-studies-of-household-brands-using-pay-to-play-ethically.html"><img src="/images/toolkits/5-case-studies-ethical-ads.avif" alt="Brands Using Paid Visibility Ethically cover"></a>
+        <h3><a href="/toolkits/5-case-studies-of-household-brands-using-pay-to-play-ethically.html">🌟 Mini Case Study Pack — Paid Visibility Done Right</a></h3>
+        <p>Five global brands prove that ethical paid campaigns build trust and ROI. From 🛒 Aldi’s value-first ads to 🌱 Allbirds’ carbon labels, discover how purpose-led media spend turns customers into loyal advocates.</p>
+        <p class="center" style="margin-top:10px">
+          <a class="btn btn-secondary" href="/toolkits/5-case-studies-of-household-brands-using-pay-to-play-ethically.html">Get the toolkit</a>
+        </p>
+      </article> 
+
+        <!-- Toolkit 9: Checklist: 10 Everyday Actions for Planetary & Personal Health -->
+      <article class="card">
+        <a class="thumb" href="/toolkits/planetary-health-checklist.html"><img src="/images/toolkits/planetary-health-checklist.avif" alt="Planetary health checklist cover"></a>
+        <h3><a href="/toolkits/planetary-health-checklist.html">🌍✨Checklist: 10 Everyday Actions for Planetary & Personal Health</a></h3>
+        <p>Your daily habits are your first climate action plan. This free checklist helps you align wellness with sustainability through ten simple actions — from mindful eating and energy conservation to mental health and community advocacy. Use it as both a mirror 🪞 to reflect on where you are and a roadmap to living more consciously — for yourself, your home, and the planet we share.</p>
+           <p class="center" style="margin-top:10px">
+          <a class="btn btn-secondary" href="/toolkits/planetary-health-checklist.html">Get the checklist</a>
+        </p>
+      </article> 
+
+         <!-- Toolkit 10: Return of the Lion — Kenya’s Big Cat Regeneration -->
+      <article class="card">
+        <a class="thumb" href="/toolkits/return-of-the-lion-case-study.html"><img src="/images/toolkits/the-return-of-the-lion-case-study.avif" alt="Return of the lion case study cover"></a>
+        <h3><a href="/toolkits/return-of-the-lion-case-study.html">🦁 Return of the Lion — Kenya’s Big Cat Regeneration</a></h3>
+        <p>Across Kenya’s sun-drenched savannas, the roar of the lion — once the heartbeat of our wilderness — is fading. This sustainability case study traces how habitat loss, climate stress, and human conflict have silenced the King of Beasts… and how communities, scientists, and storytellers are restoring the roar through regenerative coexistence.</p>
+
+       <p class="center" style="margin-top:10px">
+          <a class="btn btn-secondary" href="/toolkits/return-of-the-lion-case-study.html">Get the case study</a>
+        </p>
+      </article> 
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container center" style="padding:46px 0 80px;border-top:1px solid rgba(255,255,255,.08);color:#a7b0bf">
+    <p>© 2025 • Brian Njenga. All rights reserved.</p>
+    <p>Built with care in Kenya • <a class="btn btn-primary" href="/terms.html">Terms</a> • <a class="btn btn-primary" href="/privacy.html">Privacy</a></p>
+  </div>
+</footer>
+</body>
+</html>
